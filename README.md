@@ -56,6 +56,21 @@ const webpackConfig = smp.wrap({
 
 and you're done! SMP will now be printing timing output to the console by default.
 
+But if you choose to integrate it within your script all the time, you may face the following:
+- The build fails at the end (in case of prod)
+- Some plugin features such as HMR in react don't work.
+
+To resolve this, you would have to exclude these plugins from the meassure (<a>Learn more about why it happens</a>):
+Just you can do by passing an optional array parameter of the name of the plugin class to exclude.
+
+For example, to exlcude, ReactRefreshPlugin and MiniCSSExtractPlugin send the list as:
+
+```javascript
+smp.wrap(config, ['ReactRefreshPlugin', 'MiniCSSExtractPlugin'])
+```
+
+And voila! You are now free to use this in production.
+
 Check out the [examples folder](/examples) for some more examples.
 
 ## Options
