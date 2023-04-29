@@ -1,3 +1,5 @@
+The credit for this package goes miles and miles to <a href="https://github.com/stephencookdev/speed-measure-webpack-plugin" target="_blank" >Stephen Cook - Speed Measure Webpack Plugin</a>. The only work of mine is to migrate it to Webpack v5 and adding an option to exclude certain plugins in the `wrap` config.
+
 <div align="center">
   <img width="120" height="120" src="https://rawgit.com/stephencookdev/speed-measure-webpack-plugin/master/logo.svg" />
   <h1>
