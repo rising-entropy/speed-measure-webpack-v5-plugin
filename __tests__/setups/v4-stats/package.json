@@ -1,0 +1,25 @@
+{
+  "name": "v4-stats",
+  "version": "0.0.1",
+  "description": "Test webpack v4 with a StatsPlugin set-up with SMP",
+  "scripts": {
+    "full-test": "npm run prepare && npm run test && npm run cleanup",
+    "prepare": "cp -r ../../common/* .",
+    "test": "jest ./smp.test.js",
+    "cleanup": "rm -rf dist",
+    "audit-fix": "npm audit fix"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "jest": "^26.6.3",
+    "stats-webpack-plugin": "^0.6.2",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.42.0"
+  }
+}
