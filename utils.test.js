@@ -10,7 +10,7 @@ describe("prependLoader", () => {
       },
       to: {
         test: /\.jsx?$/,
-        use: ["speed-measure-webpack-plugin/loader", "babel-loader"],
+        use: ["speed-measure-webpack-v5-plugin/loader", "babel-loader"],
       },
     },
 
@@ -22,7 +22,7 @@ describe("prependLoader", () => {
       },
       to: {
         test: /\.jsx?$/,
-        use: ["speed-measure-webpack-plugin/loader", "babel-loader"],
+        use: ["speed-measure-webpack-v5-plugin/loader", "babel-loader"],
       },
     },
 
@@ -37,7 +37,7 @@ describe("prependLoader", () => {
       to: {
         test: /\.jsx?$/,
         use: [
-          "speed-measure-webpack-plugin/loader",
+          "speed-measure-webpack-v5-plugin/loader",
           { loader: "babel-loader", options: {} },
         ],
       },
@@ -53,7 +53,7 @@ describe("prependLoader", () => {
       to: {
         test: /\.jsx?$/,
         use: [
-          "speed-measure-webpack-plugin/loader",
+          "speed-measure-webpack-v5-plugin/loader",
           { loader: "babel-loader", options: {} },
         ],
       },
@@ -69,7 +69,7 @@ describe("prependLoader", () => {
       to: {
         test: /\.jsx?$/,
         use: [
-          "speed-measure-webpack-plugin/loader",
+          "speed-measure-webpack-v5-plugin/loader",
           { loader: "babel-loader", options: {} },
           "thread-loader",
         ],
@@ -87,10 +87,10 @@ describe("prependLoader", () => {
         test: /\.jsx?$/,
         oneOf: [
           {
-            use: ["speed-measure-webpack-plugin/loader", "babel-loader"],
+            use: ["speed-measure-webpack-v5-plugin/loader", "babel-loader"],
           },
           {
-            use: ["speed-measure-webpack-plugin/loader", "thread-loader"],
+            use: ["speed-measure-webpack-v5-plugin/loader", "thread-loader"],
           },
         ],
       },
@@ -111,11 +111,11 @@ describe("prependLoader", () => {
       to: [
         {
           test: /\.jsx?$/,
-          use: ["speed-measure-webpack-plugin/loader", "babel-loader"],
+          use: ["speed-measure-webpack-v5-plugin/loader", "babel-loader"],
         },
         {
           test: /\.css$/,
-          use: ["speed-measure-webpack-plugin/loader", "css-loader"],
+          use: ["speed-measure-webpack-v5-plugin/loader", "css-loader"],
         },
       ],
     },

@@ -4,6 +4,6 @@ module.exports = {
     "@neutrinojs/jest",
 
     // Make sure this is last! This strongly depends on being placed last
-    "speed-measure-webpack-plugin/neutrino"
-  ]
-}
+    "speed-measure-webpack-v5-plugin/neutrino",
+  ],
+};

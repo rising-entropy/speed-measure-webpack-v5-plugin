@@ -19,13 +19,13 @@ This plugin measures your webpack build speed, giving an output like this:
 ## Install
 
 ```bash
-npm install --save-dev speed-measure-webpack-plugin
+npm install --save-dev speed-measure-webpack-v5-plugin
 ```
 
 or
 
 ```bash
-yarn add -D speed-measure-webpack-plugin
+yarn add -D speed-measure-webpack-v5-plugin
 ```
 
 ## Requirements
@@ -45,7 +45,7 @@ const webpackConfig = {
 to
 
 ```javascript
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const SpeedMeasurePlugin = require("speed-measure-webpack-v5-plugin");
 
 const smp = new SpeedMeasurePlugin();
 

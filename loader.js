@@ -17,7 +17,7 @@ module.exports.pitch = function () {
   const module = this.resourcePath;
   const loaderPaths = this.loaders
     .map((l) => l.path)
-    .filter((l) => !l.includes("speed-measure-webpack-plugin"));
+    .filter((l) => !l.includes("speed-measure-webpack-v5-plugin"));
 
   // Hack ourselves to overwrite the `require` method so we can override the
   // loadLoaders

@@ -1,12 +1,12 @@
 const merge = require("webpack-merge");
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const SpeedMeasurePlugin = require("speed-measure-webpack-v5-plugin");
 
 const smp = new SpeedMeasurePlugin();
 const TARGET = process.env.npm_lifecycle_event;
 
 const commonConfig = {
   entry: {
-    app: ["./app.js"]
+    app: ["./app.js"],
   },
   module: {
     loaders: [
@@ -20,16 +20,16 @@ const commonConfig = {
 
 let mergedConfig = commonConfig;
 
-if(TARGET === "start") {
+if (TARGET === "start") {
   mergedConfig = merge(common, {
     module: {
       loaders: [
         {
           test: /\.jsx?$/,
-          loader: "babel?stage=1"
-        }
-      ]
-    }
+          loader: "babel?stage=1",
+        },
+      ],
+    },
   });
 }
 

@@ -58,7 +58,7 @@ module.exports.getLoaderNames = (loaders) =>
               (_, m) => m
             )
         )
-        .filter((l) => !l.includes("speed-measure-webpack-plugin"))
+        .filter((l) => !l.includes("speed-measure-webpack-v5-plugin"))
     : ["modules with no loaders"];
 
 module.exports.groupBy = (key, arr) => {
@@ -108,7 +108,7 @@ const prependLoader = (rules) => {
 
   if (rules.use) {
     if (!Array.isArray(rules.use)) rules.use = [rules.use];
-    rules.use.unshift("speed-measure-webpack-plugin/loader");
+    rules.use.unshift("speed-measure-webpack-v5-plugin/loader");
   }
 
   if (rules.oneOf) {
