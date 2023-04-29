@@ -36,3 +36,8 @@ if(TARGET === "start") {
 // The only difference to how you normally use webpack-merge is that you need
 // to `smp.wrap` whatever your final config is
 module.exports = smp.wrap(mergedConfig);
+
+// if you have plugins that you wish to exclude for reasons as it may fail your build or
+// not allow some plugins to work normally (Eg: ReactRefreshPlugin), pass those in an optional array
+
+// module.exports = smp.wrap(mergedConfig, ['ReactRefreshPlugin'])
