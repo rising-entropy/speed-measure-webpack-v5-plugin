@@ -56,6 +56,21 @@ const webpackConfig = smp.wrap({
 
 and you're done! SMP will now be printing timing output to the console by default.
 
+But if you choose to integrate it within your script all the time, you may face the following:
+- The build fails at the end (in case of prod)
+- Some plugin features such as HMR in react don't work.
+
+To resolve this, you would have to exclude these plugins from the meassure (<a>Learn more about why it happens</a>):
+Just you can do by passing an optional array parameter of the name of the plugin class to exclude.
+
+For example, to exlcude, ReactRefreshPlugin and MiniCSSExtractPlugin send the list as:
+
+```javascript
+smp.wrap(config, ['ReactRefreshPlugin', 'MiniCSSExtractPlugin'])
+```
+
+And voila! You are now free to use this in production.
+
 Check out the [examples folder](/examples) for some more examples.
 
 ## Options
@@ -161,6 +176,18 @@ This flag is _experimental_. Some loaders will have inaccurate results:
 - loaders emitting file output (e.g. `file-loader`)
 
 We will find solutions to these issues before removing the _(experimental)_ flag on this option.
+
+## What Happens under the Hood?
+
+Loader times are simple to measure, we can directly consume the callback and measure the before and after time.
+For Plugins, it's a bit tricky. We have to wrap each Plugin into a Proxy Plugin which has the functions to get the before and after times. Which is why, we `wrap` the configuration.
+
+A problem that the users faced in the original `speed-measure-webpack-plugin`, is that plugins such as `MiniCSSExtractPlugin` throw an exception when they are invoked not by the original class, but a proxy - this results in build failure. (Issues like <a href="https://github.com/stephencookdev/speed-measure-webpack-plugin/issues/172" target="_blank">these</a> for example)
+
+To resolve this, we would have to exclude these plugins from being wrapped. And since the support for the original package has seemingly ended since the last 2 years, it inspired me to make this new package with the feature to exlude such Plugins.
+
+If you're still curious on getting the timings of all the plugins, you can choose to not pass the array and let the build fail to get the complete timings.
+
 
 ## FAQ
 
